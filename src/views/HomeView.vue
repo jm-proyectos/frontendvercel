@@ -25,7 +25,7 @@
       </thead>
       <tbody>
         <tr v-for="(service, index) in servicios" :key="index">
-            <td>{{ service._id }}</td>
+            <td>{{ service.nombre }}</td>
             <td>{{ service.dominio }}</td>
             <td>
               <span :class="['status', service.statusColor]">{{ service.estatus }}</span>
@@ -54,6 +54,7 @@
 <script setup>
 import Main from '../components/Main.vue'
 //import Footer from '../components/Footer.vue'
+import axiosInstance from '../plugins/axios.js';
 
 import router from '../router/router';
 
@@ -94,9 +95,9 @@ async function pingService(index) {
   }
   //service.lastCheck = "hace unos segundos";
   service.lastCheck = service.dominio;
+  const { data } = await axiosInstance.patch(`/servicios/${service._id}`, service);
 }
 
-//const { data } = await axiosInstance.patch(`/servicios/${params.id}`, newservicio);
 
 const agregar = () => {
   router.push({ name: "crearServicio"});
