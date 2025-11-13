@@ -25,7 +25,7 @@
       </thead>
       <tbody>
         <tr v-for="(service, index) in servicios" :key="index">
-            <td>{{ service.id }}</td>
+            <td>{{ service._id }}</td>
             <td>{{ service.dominio }}</td>
             <td>
               <span :class="['status', service.statusColor]">{{ service.estatus }}</span>
