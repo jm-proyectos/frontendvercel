@@ -1,6 +1,5 @@
 <template>
   <Main/>
-  
     <div class="container">
     <header class="header">
       <img src="/Logo_CORPOELEC.png" alt="CORPOELEC" class="logo" />
@@ -12,7 +11,6 @@
       <span><span class="dot yellow"></span> Lento</span>
       <span><span class="dot red"></span> Caído</span>
     </div>
-
 
     <div class="table-container">
     <table>
@@ -27,7 +25,7 @@
       </thead>
       <tbody>
         <tr v-for="(service, index) in servicios" :key="index">
-            <td>{{ service.nombre }}</td>
+            <td>{{ service.id }}</td>
             <td>{{ service.dominio }}</td>
             <td>
               <span :class="['status', service.statusColor]">{{ service.estatus }}</span>
@@ -50,7 +48,6 @@
     </div>
     </div>
   </div>
-  
 </template>
 
 
@@ -58,13 +55,11 @@
 import Main from '../components/Main.vue'
 //import Footer from '../components/Footer.vue'
 
-//import { RouterLink, RouterView } from 'vue-router'
 import router from '../router/router';
 
 import {onMounted, ref } from "vue";
 import { useRouter, useRoute } from "vue-router";
 const { params } = useRoute();
-//const router = useRouter();
 
 const servicios = ref([]);
 //const API = 'http://localhost:3000';
@@ -80,22 +75,11 @@ onMounted(() => {
   cargar();
 });
 
-//const services = ref([
-//  { nombre: "DNS 192.168.10.10", dominio: "dns.corpoelec.com", statusText: "Desconocido", statusColor: "gray", lastCheck: "-" },
-//  { nombre: "Correo Web", dominio: "correo.corpoelec.com", statusText: "Desconocido", statusColor: "gray", lastCheck: "-" },
-//  { nombre: "Intranet", dominio: "intranet.corpoelec.com", statusText: "Desconocido", statusColor: "gray", lastCheck: "-" },
-//  { nombre: "Correo Thunderbird", dominio: "thunderbird.corpoelec.com", statusText: "Desconocido", statusColor: "gray", lastCheck: "-" },
-//]);
-
 async function pingService(index) {
   const service = servicios.value[index];
   try {
-    //const res = await fetch(`http://localhost:3000/ping/${service.dominio}`);
-    //const resp = await fetch(`https://backendvercel-umber.vercel.app/ping/dns.corpoelec.com`);
     const data = await fetch(`${API}/ping/${service.dominio}`);
     const resp = await data.json();
-    //const data = await resp.json();
-    
 
     if (resp > 0) {
       service.estatus = resp < 150 ? "Operacional" : "Lento";
@@ -106,12 +90,13 @@ async function pingService(index) {
     }
   } catch (e) {
     service.estatus = "Caído";
-    //service.status = "prueba-error";
     service.statusColor = "red";
   }
   //service.lastCheck = "hace unos segundos";
   service.lastCheck = service.dominio;
 }
+
+//const { data } = await axiosInstance.patch(`/servicios/${params.id}`, newservicio);
 
 const agregar = () => {
   router.push({ name: "crearServicio"});
@@ -242,11 +227,6 @@ th {
 /* --- Responsive (Móvil) --- */
 @media (max-width: 600px) {
 
-.principal{
-  display: inline-block;
-  align-items: center;
-  align-content: center;
-}
   h1 {
     font-size: 0.8rem;
   }
