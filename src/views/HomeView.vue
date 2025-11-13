@@ -1,6 +1,6 @@
 <template>
   <Main/>
-  <div class="principal">
+  
     <div class="container">
     <header class="header">
       <img src="/Logo_CORPOELEC.png" alt="CORPOELEC" class="logo" />
@@ -50,7 +50,7 @@
     </div>
     </div>
   </div>
-  </div>
+  
 </template>
 
 
