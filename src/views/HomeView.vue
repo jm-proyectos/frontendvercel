@@ -88,10 +88,12 @@ onMounted(() => {
 //]);
 
 async function pingService(index) {
-  const service = servicios.value[index];
+  //const service = servicios.value[index];
   try {
     //const res = await fetch(`http://localhost:3000/ping/${service.dominio}`);
-    const resp = await fetch(`https://backendvercel-umber.vercel.app/ping/dns.corpoelec.com`);
+    //const resp = await fetch(`https://backendvercel-umber.vercel.app/ping/dns.corpoelec.com`);
+    const data = await fetch(`${API}/ping/dns.corpoelec.com`);
+    const resp = await data.json();
     //const data = await resp.json();
     
 
