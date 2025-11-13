@@ -109,8 +109,8 @@ async function pingService(index) {
     //service.status = "prueba-error";
     service.statusColor = "red";
   }
-  service.lastCheck = "hace unos segundos";
-  //service.lastCheck = resp;
+  //service.lastCheck = "hace unos segundos";
+  service.lastCheck = service.dominio;
 }
 
 const agregar = () => {
