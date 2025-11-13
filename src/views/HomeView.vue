@@ -105,7 +105,7 @@ async function pingService(index) {
 
   //const response1 = await axiosInstance.put(`${API}/api/servicios/${service._id}`, newservicio);
     fetch(`${API}/api/servicios/${service._id}`, {
-    method: 'PUT', // o 'PATCH' si solo quieres actualizar campos específicos
+    method: 'PATCH', // o 'PATCH' si solo quieres actualizar campos específicos
     headers: {
       'Content-Type': 'application/json',
     },
