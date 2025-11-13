@@ -28,7 +28,7 @@
             <td>{{ service.nombre }}</td>
             <td>{{ service.dominio }}</td>
             <td>
-              <span :class="['status', service.statusColor]">{{ service.estatus }}</span>
+              <span :class="['status', service.estatusColor]">{{ service.estatus }}</span>
             </td>
             <td>{{ service.lastCheck }}</td>
             <td class="acciones">
@@ -86,21 +86,22 @@ async function pingService(index) {
 
     if (resp > 0) {
       service.estatus = resp < 150 ? "Operacional" : "Lento";
-      service.statusColor = resp < 150 ? "green" : "yellow";
+      service.estatusColor = resp < 150 ? "green" : "yellow";
     } else {
       service.estatus = "Caído";
-      service.statusColor = "red";
+      service.estatusColor = "red";
     }
   } catch (e) {
     service.estatus = "Caído";
-    service.statusColor = "red";
+    service.estatusColor = "red";
   }
   //service.lastCheck = "hace unos segundos";
   service.lastCheck = service.dominio;
   const newservicio = reactive({
     "nombre": service.nombre,
     "dominio": service.dominio,
-    "estatus": service.estatus
+    "estatus": service.estatus,
+    "estatusColor": service.estatusColor,
   });
 
   //const response1 = await axiosInstance.put(`${API}/api/servicios/${service._id}`, newservicio);
