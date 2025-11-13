@@ -95,8 +95,8 @@ async function pingService(index) {
     const data = await res.json();
 
     if (res) {
-      service.estatus = res < 150 ? "Operacional" : "Lento";
-      service.statusColor = res < 150 ? "green" : "yellow";
+      service.estatus = res < 250 ? "Operacional" : "Lento";
+      service.statusColor = res < 250 ? "green" : "yellow";
     } else {
       service.estatus = "Caído";
       service.statusColor = "red";
