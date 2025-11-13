@@ -100,7 +100,7 @@ async function pingService(index) {
       service.status = "prueba";
       service.statusColor = resp < 250 ? "green" : "yellow";
     } else {
-      service.estatus = "Caído";
+      service.estatus = "Caído resp < 0";
       service.statusColor = "red";
     }
   } catch (e) {
