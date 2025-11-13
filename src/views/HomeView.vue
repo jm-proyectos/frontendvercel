@@ -97,7 +97,7 @@ async function pingService(index) {
 
     if (resp) {
       //service.estatus = res < 250 ? "Operacional" : "Lento";
-      service.status = toString(resp);
+      service.status = "prueba";
       service.statusColor = resp < 250 ? "green" : "yellow";
     } else {
       service.estatus = "Caído";
