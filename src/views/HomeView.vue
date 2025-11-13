@@ -103,7 +103,27 @@ async function pingService(index) {
     "estatus": service.estatus
   });
 
-  const response1 = await axiosInstance.put(`${API}/api/servicios/${service._id}`, newservicio);
+  //const response1 = await axiosInstance.put(`${API}/api/servicios/${service._id}`, newservicio);
+    fetch(`${API}/api/servicios/${service._id}`, {
+    method: 'PUT', // o 'PATCH' si solo quieres actualizar campos específicos
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(newservicio)
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Error en la red ' + response.statusText);
+    }
+    return response.json();
+  })
+  .then(data => {
+    console.log('Registro actualizado exitosamente:', data);
+  })
+  .catch(error => {
+    console.error('Error al actualizar el registro:', error);
+  });
+
 }
 
 
