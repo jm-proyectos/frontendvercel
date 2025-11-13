@@ -58,11 +58,19 @@ import axiosInstance from '../plugins/axios.js';
 
 import router from '../router/router';
 
-import {onMounted, ref } from "vue";
+import {onMounted, ref, reactive } from "vue";
+
 import { useRouter, useRoute } from "vue-router";
 const { params } = useRoute();
 
 const servicios = ref([]);
+
+const newservicio = reactive({
+  "nombre": service.nombre,
+  "dominio": service.dominio,
+  "estatus": service.estatus
+});
+
 //const API = 'http://localhost:3000';
 const API = 'https://backendvercel-umber.vercel.app';
 
@@ -95,7 +103,7 @@ async function pingService(index) {
   }
   //service.lastCheck = "hace unos segundos";
   service.lastCheck = service.dominio;
-  const { data } = await axiosInstance.patch(`/servicios/${service._id}`, service);
+  const { data } = await axiosInstance.patch(`/servicios/${service._id}`, newservicio);
 }
 
 
