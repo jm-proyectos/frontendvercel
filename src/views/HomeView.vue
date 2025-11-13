@@ -103,12 +103,7 @@ async function pingService(index) {
     "estatus": service.estatus
   });
 
-  const config = {
-      headers: {
-        'Content-Type': 'application/json'
-      }
-  };
-  const response1 = await axiosInstance.patch(`${API}/api/servicios/${service._id}`, newservicio,config);
+  const response1 = await axiosInstance.put(`${API}/api/servicios/${service._id}`, newservicio);
 }
 
 
