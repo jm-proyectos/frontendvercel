@@ -252,7 +252,7 @@ th {
   }
 
 .container {
-  max-width: 95%;
+  max-width: 100%;
   margin: 0 auto;
   padding: 0px;
 }
