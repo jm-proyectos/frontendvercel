@@ -80,11 +80,6 @@ onMounted(() => {
 
 async function pingService(index) {
   const service = servicios.value[index];
-  const newservicio = reactive({
-    "nombre": service.nombre,
-    "dominio": service.dominio,
-    "estatus": service.estatus
-  });
   try {
     const data = await fetch(`${API}/ping/${service.dominio}`);
     const resp = await data.json();
@@ -102,21 +97,18 @@ async function pingService(index) {
   }
   //service.lastCheck = "hace unos segundos";
   service.lastCheck = service.dominio;
-  //const { data } = await axiosInstance.patch(`${API}/api/servicios/${service._id}`, newservicio);
-  const data = await fetch(`${API}/api/servicios/${service._id}`, {
-      method: 'patch',
+  const newservicio = reactive({
+    "nombre": service.nombre,
+    "dominio": service.dominio,
+    "estatus": service.estatus
+  });
+
+  const config = {
       headers: {
         'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(newservicio)
-    })
-    .then(response => response.json())
-.then(data => {
-  console.log('Recurso actualizado:', data);
-})
-.catch(error => {
-  console.error('Error:', error);
-});
+      }
+  };
+  const response1 = await axiosInstance.patch(`${API}/api/servicios/${service._id}`, newservicio,config);
 }
 
 
