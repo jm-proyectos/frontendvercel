@@ -98,20 +98,19 @@ async function pingService(index) {
     
 
     if (resp > 0) {
-      //service.estatus = res < 250 ? "Operacional" : "Lento";
-      service.status = "prueba";
-      service.statusColor = resp < 250 ? "green" : "yellow";
+      service.estatus = resp < 150 ? "Operacional" : "Lento";
+      service.statusColor = resp < 150 ? "green" : "yellow";
     } else {
-      service.estatus = "Caído resp < 0";
+      service.estatus = "Caído";
       service.statusColor = "red";
     }
   } catch (e) {
-    //service.estatus = "Caído";
-    service.status = "prueba-error";
+    service.estatus = "Caído";
+    //service.status = "prueba-error";
     service.statusColor = "red";
   }
-  //service.lastCheck = "hace unos segundos";
-  service.lastCheck = resp;
+  service.lastCheck = "hace unos segundos";
+  //service.lastCheck = resp;
 }
 
 const agregar = () => {
