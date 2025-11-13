@@ -65,12 +65,6 @@ const { params } = useRoute();
 
 const servicios = ref([]);
 
-const newservicio = reactive({
-  "nombre": service.nombre,
-  "dominio": service.dominio,
-  "estatus": service.estatus
-});
-
 //const API = 'http://localhost:3000';
 const API = 'https://backendvercel-umber.vercel.app';
 
@@ -86,6 +80,11 @@ onMounted(() => {
 
 async function pingService(index) {
   const service = servicios.value[index];
+  const newservicio = reactive({
+    "nombre": service.nombre,
+    "dominio": service.dominio,
+    "estatus": service.estatus
+  });
   try {
     const data = await fetch(`${API}/ping/${service.dominio}`);
     const resp = await data.json();
