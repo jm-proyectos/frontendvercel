@@ -102,7 +102,21 @@ async function pingService(index) {
   }
   //service.lastCheck = "hace unos segundos";
   service.lastCheck = service.dominio;
-  const { data } = await axiosInstance.patch(`${API}/api/servicios/${service._id}`, newservicio);
+  //const { data } = await axiosInstance.patch(`${API}/api/servicios/${service._id}`, newservicio);
+  const data = await fetch(`${API}/api/servicios/${_id}`, {
+      method: 'patch',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newservicio)
+    })
+    .then(response => response.json())
+.then(data => {
+  console.log('Recurso actualizado:', data);
+})
+.catch(error => {
+  console.error('Error:', error);
+});
 }
 
 
