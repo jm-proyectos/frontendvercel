@@ -92,7 +92,7 @@ async function pingService(index) {
   try {
     //const res = await fetch(`http://localhost:3000/ping/${service.dominio}`);
     const res = await fetch(`https://backendvercel-umber.vercel.app/ping/${service.dominio}`);
-    const data = await res.json();
+    //const data = await res.json();
 
     if (res) {
       service.estatus = res < 250 ? "Operacional" : "Lento";
