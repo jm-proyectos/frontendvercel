@@ -95,7 +95,7 @@ async function pingService(index) {
     const data = await resp.json();
     
 
-    if (data.time > 0) {
+    if (data > 0) {
       //service.estatus = res < 250 ? "Operacional" : "Lento";
       service.status = "prueba";
       service.statusColor = resp < 250 ? "green" : "yellow";
@@ -108,7 +108,8 @@ async function pingService(index) {
     service.status = "prueba-error";
     service.statusColor = "red";
   }
-  service.lastCheck = "hace unos segundos";
+  //service.lastCheck = "hace unos segundos";
+  service.lastCheck = data;
 }
 
 const agregar = () => {
