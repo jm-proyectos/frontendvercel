@@ -109,7 +109,7 @@ async function pingService(index) {
     service.statusColor = "red";
   }
   //service.lastCheck = "hace unos segundos";
-  service.lastCheck = data;
+  service.lastCheck = resp;
 }
 
 const agregar = () => {
