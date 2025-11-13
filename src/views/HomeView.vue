@@ -94,7 +94,7 @@ async function pingService(index) {
     const res = await fetch(`https://backendvercel-umber.vercel.app/ping/${service.dominio}`);
     const data = await res.json();
 
-    if (data) {
+    if (res) {
       service.estatus = res < 150 ? "Operacional" : "Lento";
       service.statusColor = res < 150 ? "green" : "yellow";
     } else {
