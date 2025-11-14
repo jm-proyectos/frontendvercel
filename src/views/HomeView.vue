@@ -105,7 +105,7 @@ async function pingService(index) {
   const horas = Math.floor(minutos / 60);
 
   
-  var n = fechaActual..toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
+  var n = fechaActual.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
 
   service.ultimoPing = n;
 
