@@ -14,6 +14,7 @@
 
 <script setup>
 import axiosInstance from '../plugins/axios.js';
+const API = 'https://backendvercel-umber.vercel.app';
 //import router from '..//router';
 import { ref, reactive } from 'vue';
 
@@ -22,20 +23,51 @@ const { params } = useRoute();
 const router = useRouter();
 const newservicio = reactive({
   "nombre": params.nombre,
-  "dominio": params.dominio
+  "dominio": params.dominio,
+  "estatus": service.estatus,
+  "estatusColor": service.estatusColor,
+  "ultimoPing": service.ultimoPing
 });
 
 
+// async function enviar() {
+//   try {
+//     const { data } = await axiosInstance.patch(`/servicios/${params.id}`, newservicio);
+//     router.back();
+//     return;
+//   } catch (error) {
+//     console.log(error);
+//     return;
+//   }
+// };
+
 async function enviar() {
-  try {
-    const { data } = await axiosInstance.patch(`/servicios/${params.id}`, newservicio);
-    router.back();
-    return;
-  } catch (error) {
-    console.log(error);
-    return;
-  }
-};
+try {
+fetch(`${API}/api/servicios/${service._id}`, {
+    method: 'PATCH', // o 'PATCH' si solo quieres actualizar campos específicos
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(newservicio)
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Error en la red ' + response.statusText);
+    }
+    return response.json();
+  })
+  .then(data => {
+    console.log('Registro actualizado exitosamente:', data);
+  })
+  .catch(error => {
+    console.error('Error al actualizar el registro:', error);
+  });
+
+   } catch (error) {
+     console.log(error);
+     return;
+   }
+ };
 
 const cerrar = (() => {
   router.back();
