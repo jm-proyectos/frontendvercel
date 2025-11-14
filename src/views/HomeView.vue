@@ -97,16 +97,7 @@ async function pingService(index) {
   }
   //service.lastCheck = "hace unos segundos";
   const fechaActual = new Date();
-  const fechaDocumento = new Date(service.updatedAt);
-  const diferenciaMs = fechaActual - fechaDocumento;
-
-  const segundos = Math.floor(diferenciaMs / 1000);
-  const minutos = Math.floor(segundos / 60);
-  const horas = Math.floor(minutos / 60);
-
-  
   var n = fechaActual.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
-
   service.ultimoPing = n;
 
   const newservicio = reactive({
