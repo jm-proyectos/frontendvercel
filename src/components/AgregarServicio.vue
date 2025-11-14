@@ -58,9 +58,10 @@ async function enviar() {
       })
       .then(data => {
         console.log('Registro agregado exitosamente:', data);
+        router.back();
       })
       .catch(error => {
-        console.error('Error al actualizar el registro:', error);
+        console.error('Error al agregar registro:', error);
       });
 
   } catch (error) {
