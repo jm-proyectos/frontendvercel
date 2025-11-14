@@ -100,7 +100,7 @@ async function pingService(index) {
   const fechaDocumento = new Date(service.updatedAt);
   const diferenciaMs = fechaActual - fechaDocumento;
 
-  const segundos = Math.floor(fechaActual / 1000);
+  const segundos = Math.floor(diferenciaMs / 1000);
   const minutos = Math.floor(segundos / 60);
   const horas = Math.floor(minutos / 60);
 
