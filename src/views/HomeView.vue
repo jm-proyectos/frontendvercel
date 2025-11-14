@@ -96,7 +96,15 @@ async function pingService(index) {
     service.estatusColor = "red";
   }
   //service.lastCheck = "hace unos segundos";
-  service.lastCheck = service.updatedAt;
+  const fechaActual = new Date();
+  const fechaDocumento = new Date(service.updatedAt);
+  const diferenciaMs = fechaActual - fechaDocumento;
+
+  const segundos = Math.floor(diferenciaMs / 1000);
+  const minutos = Math.floor(segundos / 60);
+  const horas = Math.floor(minutos / 60);
+
+  service.lastCheck = segundos;
 
   const newservicio = reactive({
     "nombre": service.nombre,
