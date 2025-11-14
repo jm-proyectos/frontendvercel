@@ -30,7 +30,7 @@
             <td>
               <span :class="['status', service.estatusColor]">{{ service.estatus }}</span>
             </td>
-            <td>{{ Math.floor(Date(service.ultimoPing) / 1000) }}</td>
+            <td>{{ Math.floor(service.ultimoPing) / 1000 }}</td>
             <td class="acciones">
               <button class="ping-button" @click="pingService(index)">↻ Ping</button>
               <span @click="editar(service)" class="icono">
