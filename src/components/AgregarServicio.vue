@@ -20,7 +20,10 @@ import router from '..//router/router.js';
 import { ref, reactive } from 'vue';
 const newservicio = reactive({
   "nombre": '',
-  "dominio": ''
+  "dominio": '',
+  "estatus": 'desconocido',
+  "estatusColor": '',
+  "ultimoPing":''
 });
 
 
