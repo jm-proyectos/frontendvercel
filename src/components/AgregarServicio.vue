@@ -43,7 +43,7 @@ const newservicio = reactive({
 
 async function enviar() {
   try {
-    fetch(`${API}/api/servicios/${service._id}`, {
+    fetch(`${API}/api/servicios`, {
       method: 'POST', // o 'PATCH' si solo quieres actualizar campos específicos
       headers: {
         'Content-Type': 'application/json',
