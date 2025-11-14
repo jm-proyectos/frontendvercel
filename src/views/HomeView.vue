@@ -30,7 +30,7 @@
             <td>
               <span :class="['status', service.estatusColor]">{{ service.estatus }}</span>
             </td>
-            <td>{{ service.ultimoPing }}</td>
+            <td>{{ Math.floor((Date.now() - service.ultimoPing) / 1000) }}</td>
             <td class="acciones">
               <button class="ping-button" @click="pingService(index)">↻ Ping</button>
               <span @click="editar(service)" class="icono">
@@ -104,7 +104,7 @@ async function pingService(index) {
   const minutos = Math.floor(segundos / 60);
   const horas = Math.floor(minutos / 60);
 
-  service.ultimoPing = 0;
+  service.ultimoPing = segundos;
 
   const newservicio = reactive({
     "nombre": service.nombre,
