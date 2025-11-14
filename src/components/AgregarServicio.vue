@@ -23,20 +23,50 @@ const newservicio = reactive({
   "dominio": '',
   "estatus": 'desconocido',
   "estatusColor": '',
-  "ultimoPing":''
+  "ultimoPing": ''
 });
+
+
+// async function enviar() {
+//   try {
+//     const { data } = await axiosInstance.post('/servicios', newservicio);
+//     router.back();
+//     return;
+//   } catch (error) {
+//     console.log(error);
+//     return;
+//   }
+// }
 
 
 async function enviar() {
   try {
-    const { data } = await axiosInstance.post('/servicios', newservicio);
-    router.back();
-    return;
+    fetch(`${API}/api/servicios/${service._id}`, {
+      method: 'POST', // o 'PATCH' si solo quieres actualizar campos específicos
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newservicio)
+    })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Error en la red ' + response.statusText);
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log('Registro agregado exitosamente:', data);
+      })
+      .catch(error => {
+        console.error('Error al actualizar el registro:', error);
+      });
+
   } catch (error) {
     console.log(error);
     return;
   }
 }
+
 
 const cerrar = (() => {
   router.back();
@@ -45,10 +75,9 @@ const cerrar = (() => {
 </script>
 
 <style scoped>
-
 .modal-mask {
   font-family: 'Arial Narrow Bold', sans-serif;
-  position:fixed;
+  position: fixed;
   z-index: 9998;
   top: 2.5rem;
   left: 0;
@@ -78,7 +107,7 @@ const cerrar = (() => {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items:center;
+  align-items: center;
 }
 
 .titulo {
