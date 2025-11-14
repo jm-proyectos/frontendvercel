@@ -98,7 +98,7 @@ async function pingService(index) {
   //service.lastCheck = "hace unos segundos";
   const fechaActual = new Date();
   var n = fechaActual.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
-  service.ultimoPing = n;
+  service.ultimoPing = n.toLowerCase();
 
   const newservicio = reactive({
     "nombre": service.nombre,
