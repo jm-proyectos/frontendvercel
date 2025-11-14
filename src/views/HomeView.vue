@@ -30,7 +30,7 @@
             <td>
               <span :class="['status', service.estatusColor]">{{ service.estatus }}</span>
             </td>
-            <td>{{ service.lastCheck }}</td>
+            <td>{{ service.ultimoPing }}</td>
             <td class="acciones">
               <button class="ping-button" @click="pingService(index)">↻ Ping</button>
               <span @click="editar(service)" class="icono">
@@ -104,13 +104,14 @@ async function pingService(index) {
   const minutos = Math.floor(segundos / 60);
   const horas = Math.floor(minutos / 60);
 
-  service.lastCheck = segundos;
+  service.ultimoPing = segundos;
 
   const newservicio = reactive({
     "nombre": service.nombre,
     "dominio": service.dominio,
     "estatus": service.estatus,
     "estatusColor": service.estatusColor,
+    "ultimoPing": service.ultimoPing
   });
 
   //const response1 = await axiosInstance.put(`${API}/api/servicios/${service._id}`, newservicio);
