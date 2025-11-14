@@ -96,7 +96,8 @@ async function pingService(index) {
     service.estatusColor = "red";
   }
   //service.lastCheck = "hace unos segundos";
-  service.lastCheck = service.dominio;
+  service.lastCheck = service.updatedAt;
+
   const newservicio = reactive({
     "nombre": service.nombre,
     "dominio": service.dominio,
