@@ -55,6 +55,7 @@ fetch(`${API}/api/servicios/${params.id}`, {
   })
   .then(data => {
     console.log('Registro actualizado exitosamente:', data);
+    router.back();
   })
   .catch(error => {
     console.error('Error al actualizar el registro:', error);
