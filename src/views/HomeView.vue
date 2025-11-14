@@ -104,7 +104,7 @@ async function pingService(index) {
   const minutos = Math.floor(segundos / 60);
   const horas = Math.floor(minutos / 60);
 
-  service.ultimoPing = segundos;
+  service.ultimoPing = 0;
 
   const newservicio = reactive({
     "nombre": service.nombre,
