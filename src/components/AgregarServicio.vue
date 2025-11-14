@@ -18,6 +18,8 @@
 import axiosInstance from '../plugins/axios.js';
 import router from '..//router/router.js';
 import { ref, reactive } from 'vue';
+const API = 'https://backendvercel-umber.vercel.app';
+
 const newservicio = reactive({
   "nombre": '',
   "dominio": '',
