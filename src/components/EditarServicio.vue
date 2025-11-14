@@ -23,10 +23,7 @@ const { params } = useRoute();
 const router = useRouter();
 const newservicio = reactive({
   "nombre": params.nombre,
-  "dominio": params.dominio,
-  "estatus": service.estatus,
-  "estatusColor": service.estatusColor,
-  "ultimoPing": service.ultimoPing
+  "dominio": params.dominio
 });
 
 
@@ -43,7 +40,7 @@ const newservicio = reactive({
 
 async function enviar() {
 try {
-fetch(`${API}/api/servicios/${service._id}`, {
+fetch(`${API}/api/servicios/${params._id}`, {
     method: 'PATCH', // o 'PATCH' si solo quieres actualizar campos específicos
     headers: {
       'Content-Type': 'application/json',
