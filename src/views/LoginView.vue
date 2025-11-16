@@ -57,9 +57,9 @@ const enviar = async () => {
     }
     return response.json();
   })
-  .then(data => {
-    console.log('Login exitoso:', data);
-  })
+//  .then(data => {
+//    console.log('Login exitoso:', data);
+//  })
   .catch(error => {
     console.error('Error al iniciar sesion:', error);
   });
@@ -69,7 +69,7 @@ const enviar = async () => {
 
 
 
-async function enviar1(){
+//async function enviar1(){
 //   try {
 //     const {data} = await axiosInstance.post('/auth/login',user);
 //     if (!data){
@@ -85,7 +85,7 @@ async function enviar1(){
 //     console.log(error);
 //     return;
 //   }
-}
+//}
 </script>
 
 
