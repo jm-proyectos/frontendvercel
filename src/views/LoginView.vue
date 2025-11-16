@@ -38,9 +38,26 @@ import {ref, reactive} from 'vue';
 const API = 'https://backendvercel-umber.vercel.app';
 
 const enviar = async () => {
-  const data = await fetch(`${API}/api/auth/login`);
-  usuarios.value = await data.json();
-  console.log(usuarios.value);
+ fetch(`${API}/api/auth/login`, {
+    method: 'POST', 
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(user)
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Error en la red ' + response.statusText);
+    }
+    return response.json();
+  })
+  .then(data => {
+    console.log('Login exitoso:', data);
+  })
+  .catch(error => {
+    console.error('Error al iniciar sesion:', error);
+  });
+
 };
 
 
