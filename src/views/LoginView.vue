@@ -55,16 +55,16 @@ const enviar = async () => {
     if (!response.ok) {
       throw new Error('Error en la red ' + response.statusText);
     }
-     tokenStore.auth=true;
-     tokenStore.token = Cookies.get('token');
-     tokenStore.usuario = response;
-     router.push({ name: "/"});
-     //return;
      return response.json();
   })
-//  .then(data => {
-//    console.log('Login exitoso:', data);
-//  })
+  .then(data => {
+    console.log('Login exitoso:', data);
+     tokenStore.auth=true;
+     tokenStore.token = Cookies.get('token');
+     tokenStore.usuario = data;
+     router.push({ name: "/"});
+     return;
+  })
   .catch(error => {
     console.error('Error al iniciar sesion:', error);
   });
