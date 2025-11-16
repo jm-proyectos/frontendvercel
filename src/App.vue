@@ -53,7 +53,7 @@ header {
 }
 
 .img {
-  width: 100%;
+  width: 800px;
   padding: 5px;
 }
 
