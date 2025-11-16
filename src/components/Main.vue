@@ -5,7 +5,7 @@
 
 <template>
     <div class="contenido">
-      <!-- <img alt="" class="logo" src="/cintillo.jpg" /> -->
+      <img alt="" class="logo" src="/cintillo.jpg" />
     </div>
 </template>
 
