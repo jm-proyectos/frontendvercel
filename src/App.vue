@@ -55,7 +55,6 @@ header {
 }
 
 .cintillo {
-  width: 100vw;
   padding: 5px;
 }
 
