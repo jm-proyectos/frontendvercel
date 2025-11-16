@@ -164,6 +164,7 @@ const eliminar = async ({ nombre, _id }) => {
 /* --- Layout general --- */
 .container {
   display: flex;
+  flex-direction: column;
   justify-content: center; /* Centrado horizontal */
   align-items: center;     /* Centrado vertical */
 
