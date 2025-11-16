@@ -20,7 +20,7 @@
 import { RouterLink, RouterView } from 'vue-router'
 import {useTokenStore} from '@/stores/userStore.js';
 const tokenStore = useTokenStore();
-import router from './router';
+import router from './router/router';
 import Cookies from 'js-cookie';
 const cambiar=(()=>{  
     tokenStore.auth=false;
