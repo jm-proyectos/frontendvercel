@@ -36,6 +36,12 @@ import {ref, reactive} from 'vue';
 //const tokenStore = useTokenStore();
 
 const API = 'https://backendvercel-umber.vercel.app';
+const user = reactive({
+   "email":"jhonny@gmail.com",
+   "password":"123"
+  //"email":"",
+  //"password":""
+});
 
 const enviar = async () => {
  fetch(`${API}/api/auth/login`, {
@@ -61,12 +67,7 @@ const enviar = async () => {
 };
 
 
-const user = reactive({
-   "email":"jhonny@gmail.com",
-   "password":"123"
-  //"email":"",
-  //"password":""
-})
+
 
 async function enviar1(){
 //   try {
