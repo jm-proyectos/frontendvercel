@@ -57,7 +57,7 @@ const enviar = async () => {
     }
      tokenStore.auth=true;
      tokenStore.token = Cookies.get('token');
-     tokenStore.usuario = data;
+     tokenStore.usuario = response;
      router.push({ name: "/"});
      //return;
      return response.json();
