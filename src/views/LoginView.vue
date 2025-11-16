@@ -29,11 +29,11 @@
 
 <script setup>
 import {ref, reactive} from 'vue';
-//import Cookies from 'js-cookie';
-//import router from '../router/router';
+import Cookies from 'js-cookie';
+import router from '../router/router';
 //import axiosInstance from '../plugins/axios.js';
-//import {useTokenStore} from '@/stores/userStore.js';
-//const tokenStore = useTokenStore();
+import {useTokenStore} from '@/stores/userStore.js';
+const tokenStore = useTokenStore();
 
 const API = 'https://backendvercel-umber.vercel.app';
 const user = reactive({

@@ -16,13 +16,13 @@
 
 <script setup>
   import { RouterLink, RouterView } from 'vue-router'
-  //import {useTokenStore} from '@/stores/userStore.js';
-  //const tokenStore = useTokenStore();
+  import {useTokenStore} from '@/stores/userStore.js';
+  const tokenStore = useTokenStore();
   import router from './router/router.js';
   import Cookies from 'js-cookie';
 
   const cambiar=(()=>{  
-    //tokenStore.auth=false;
+    tokenStore.auth=false;
     Cookies.remove('token');
     router.push({ name: "home"});
   });
