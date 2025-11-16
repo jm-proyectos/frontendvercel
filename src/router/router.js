@@ -2,6 +2,7 @@ import { createRouter, createWebHistory} from 'vue-router';
 import HomeView from '../views/HomeView.vue';
 import AgregarServicio from '../components/AgregarServicio.vue';
 import EditarServicio from '../components/EditarServicio.vue';
+import LoginView from '../views/LoginView.vue';
 //import axios from 'axios';
 
 const router = createRouter({
@@ -11,6 +12,12 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView,
+      meta: {keyAuth: false}
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: LoginView,
       meta: {keyAuth: false}
     },
     {
