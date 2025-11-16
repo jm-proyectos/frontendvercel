@@ -1,7 +1,7 @@
 <template>
     <header>
       <div class="cintillo">
-        <img alt="" class="logo" src="/cintillo.jpg" />
+        <img alt="" src="/cintillo.jpg" />
       </div>
     <div class="items">
       <nav class="opciones">
