@@ -1,6 +1,8 @@
 <template>
-  <Main/>
     <header>
+      <div class="contenido">
+        <img alt="" class="logo" src="/cintillo.jpg" />
+    </div>
     <div class="items">
       <nav class="opciones">
         <div v-if="!tokenStore.auth">
