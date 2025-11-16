@@ -52,7 +52,7 @@ header {
   font-family: "Segoe UI", sans-serif;
 }
 
-.img {
+img {
   max-width: 800px;
   padding: 5px;
 }
