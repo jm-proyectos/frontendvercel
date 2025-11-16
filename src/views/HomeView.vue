@@ -20,9 +20,7 @@
           <th scope="col">Dominio</th>
           <th scope="col">Estatus</th>
           <th scope="col">Ultimo Ping</th>
-          <div v-if="tokenStore.auth">
-            <th scope="col">Acciones</th>
-          </div>
+          <th scope="col">Acciones</th>
         </tr>
       </thead>
       <tbody>
