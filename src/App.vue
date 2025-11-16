@@ -1,8 +1,5 @@
 <template>
     <header>
-      <div class="contenido">
-        <img alt="" class="logo" src="/cintillo.jpg" />
-      </div>
     <div class="items">
       <nav class="opciones">
         <div v-if="!tokenStore.auth">
@@ -18,7 +15,7 @@
 </template>
 
 <script setup>
-  import Main from './components/Main.vue'
+//  import Main from './components/Main.vue'
   import { RouterLink, RouterView } from 'vue-router'
   import {useTokenStore} from '@/stores/userStore.js';
   const tokenStore = useTokenStore();
