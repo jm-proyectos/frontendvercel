@@ -1,7 +1,7 @@
 <template>
     <header>
+    <img alt="" class="logo" src="/cintillo.jpg" />
     <div class="items">
-      <img alt="" class="logo" src="/cintillo.jpg" />
       <nav class="opciones">
         <div v-if="!tokenStore.auth">
           <router-link to="/login" class="opcion boton">Iniciar Sesión</router-link>
@@ -36,6 +36,7 @@
     height: 2.5rem;
     width: 100vw;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     background-color: #F0F1F2;
