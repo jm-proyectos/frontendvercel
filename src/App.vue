@@ -62,9 +62,8 @@ img {
 }
 
 .items {
-  margin-right: 4rem;
+  margin-right: 1px;
   padding: 5px 3px;
-  align-items: end;
 }
 
 .opciones {
