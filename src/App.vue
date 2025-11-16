@@ -46,12 +46,12 @@ header {
 
 .container {
   max-width: 900px;
-  align-items:center;
   background: #fff;
   border-radius: 12px;
   padding: 16px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   font-family: "Segoe UI", sans-serif;
+  align-items:center;
 }
 
 img {
