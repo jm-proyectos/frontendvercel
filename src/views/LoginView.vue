@@ -19,7 +19,7 @@
               class="form-control"
             />
           <button class="boton">
-            <span>Completar Logueo</span>
+            <span>Enviar</span>
           </button>
         </Form>
       </div>
@@ -35,6 +35,15 @@ import {ref, reactive} from 'vue';
 //import {useTokenStore} from '@/stores/userStore.js';
 //const tokenStore = useTokenStore();
 
+const API = 'https://backendvercel-umber.vercel.app';
+
+const enviar = async () => {
+  const data = await fetch(`${API}/api/auth/login`);
+  usuarios.value = await data.json();
+  console.log(usuarios.value);
+};
+
+
 const user = reactive({
    "email":"jhonny@gmail.com",
    "password":"123"
@@ -42,7 +51,7 @@ const user = reactive({
   //"password":""
 })
 
-async function enviar(){
+async function enviar1(){
 //   try {
 //     const {data} = await axiosInstance.post('/auth/login',user);
 //     if (!data){
@@ -58,8 +67,6 @@ async function enviar(){
 //     console.log(error);
 //     return;
 //   }
-console.log("enviar...");
-return;
 }
 </script>
 
