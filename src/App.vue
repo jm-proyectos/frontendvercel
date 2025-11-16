@@ -3,7 +3,7 @@
     <div class="items">
       <nav class="opciones">
         <div>
-          <router-link to="/" class="opcion boton">Iniciar Sesión</router-link>
+          <router-link to="/login" class="opcion boton">Iniciar Sesión</router-link>
         </div>
         <div>
           <button @click="cambiar()" class="opcion boton">Cerrar Sesión</button>
