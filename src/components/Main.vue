@@ -1,11 +1,11 @@
 <script setup>
-  import router from '../router/router';
-  router.push({ name: "home"});
+  //import router from '../router/router';
+  //router.push({ name: "home"});
 </script>
 
 <template>
     <div class="contenido">
-      <img alt="" class="logo" src="/cintillo.jpg" />
+      <!-- <img alt="" class="logo" src="/cintillo.jpg" /> -->
     </div>
 </template>
 
