@@ -52,7 +52,7 @@ header {
   font-family: "Segoe UI", sans-serif;
 }
 
-.cintillo {
+.img {
   width: 100%;
   padding: 5px;
 }
@@ -91,13 +91,4 @@ header {
   padding: 5px;
 }
 
-/* --- Responsive (Móvil) --- */
-@media (max-width: 600px) {
-
-  .contenido {
-    display: none;
-    margin: 0 auto;
-    padding: 0;
-  }
-}
 </style>
