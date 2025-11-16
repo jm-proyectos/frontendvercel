@@ -163,11 +163,6 @@ const eliminar = async ({ nombre, _id }) => {
 <style scoped>
 /* --- Layout general --- */
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Centrado horizontal */
-  align-items: center;     /* Centrado vertical */
-
   max-width: 900px;
   margin: 20px auto;
   background: #fff;
@@ -175,6 +170,7 @@ const eliminar = async ({ nombre, _id }) => {
   padding: 16px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   font-family: "Segoe UI", sans-serif;
+  text-align: center;
 }
 
 .header {
