@@ -1,6 +1,8 @@
 <template>
     <header>
-    <img alt="" class="logo" src="/cintillo.jpg" />
+      <div class="cintillo">
+        <img alt="" class="logo" src="/cintillo.jpg" />
+      </div>
     <div class="items">
       <nav class="opciones">
         <div v-if="!tokenStore.auth">
@@ -41,6 +43,14 @@
     align-items: center;
     background-color: #F0F1F2;
   }
+
+  .cintillo{
+    width: 100vw;
+    display: flex;
+    justify-content:center;
+    padding: 5px;
+  }
+
   .logo{
     margin-left: 4rem;
   }
