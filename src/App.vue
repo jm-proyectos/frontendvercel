@@ -1,6 +1,8 @@
 <template>
   <div class="container">
+    <div>
       <img alt="" src="/cintillo.jpg" />
+    </div>
     <div class="items">
       <nav class="opciones">
         <div v-if="!tokenStore.auth">
@@ -50,9 +52,6 @@ header {
   padding: 16px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   font-family: "Segoe UI", sans-serif;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 img {
@@ -84,13 +83,6 @@ img {
   border: none;
   border-radius: 8px;
   background-color: #609FFF;
-}
-
-.contenido {
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  padding: 5px;
 }
 
 </style>
