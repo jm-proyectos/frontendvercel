@@ -18,7 +18,7 @@
 
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import {useTokenStore} from '@/stores/userStore.js';
+import {useTokenStore} from './stores/userStore.js';
 const tokenStore = useTokenStore();
 import router from './router/router';
 import Cookies from 'js-cookie';
