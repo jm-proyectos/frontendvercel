@@ -30,7 +30,7 @@
 <script setup>
 import {ref, reactive} from 'vue';
 import Cookies from 'js-cookie';
-import router from '..//router';
+import router from '../router/router';
 import axiosInstance from '../plugins/axios.js';
 import {useTokenStore} from '@/stores/userStore.js';
 const tokenStore = useTokenStore();
