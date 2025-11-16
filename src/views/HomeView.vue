@@ -31,6 +31,7 @@
               <span :class="['status', service.estatusColor]">{{ service.estatus }}</span>
             </td>
             <td>{{ service.ultimoPing }}</td>
+            <div v-if="!tokenStore.auth">
             <td class="acciones">
               <button class="ping-button" @click="pingService(index)">↻ Ping</button>
               <span @click="editar(service)" class="icono">
@@ -40,6 +41,7 @@
                  ❌
               </span>
             </td>
+           </div> 
         </tr>
       </tbody>
     </table>
@@ -64,6 +66,9 @@ import { useRouter, useRoute } from "vue-router";
 const { params } = useRoute();
 
 const servicios = ref([]);
+
+import {useTokenStore} from '@/stores/userStore.js';
+const tokenStore = useTokenStore();
 
 //const API = 'http://localhost:3000';
 const API = 'https://backendvercel-umber.vercel.app';
