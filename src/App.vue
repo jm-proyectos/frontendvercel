@@ -68,7 +68,7 @@ img {
 
 .opciones {
   display: flex;
-  align-items: center;
+  align-items:end;
 }
 
 .opcion {
