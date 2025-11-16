@@ -1,6 +1,7 @@
 <template>
     <header>
     <div class="items">
+      <img alt="" class="logo" src="/cintillo.jpg" />
       <nav class="opciones">
         <div v-if="!tokenStore.auth">
           <router-link to="/login" class="opcion boton">Iniciar Sesión</router-link>
