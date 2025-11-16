@@ -58,7 +58,7 @@ const enviar = async () => {
      return response.json();
   })
   .then(data => {
-    console.log('Login exitoso:', data);
+    console.log('Login exitoso...:', data);
      tokenStore.auth=true;
      tokenStore.token = Cookies.get('token');
      tokenStore.usuario = data;
