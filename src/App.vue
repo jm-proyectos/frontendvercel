@@ -2,7 +2,7 @@
     <header>
     <div class="items">
       <nav class="opciones">
-        <router-link to="/" class="opcion">Inicio</router-link>
+        <router-link to="/" class="opcion">Inicio..</router-link>
         <router-link to="/" class="opcion">Dashboard</router-link>
         <div v-if="!tokenStore.auth">
           <router-link to="/" class="opcion boton">Iniciar Sesión</router-link>
