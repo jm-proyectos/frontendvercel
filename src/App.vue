@@ -1,8 +1,6 @@
 <template>
   <div class="container">
-    <div class="cintillo">
       <img alt="" src="/cintillo.jpg" />
-    </div>
     <div class="items">
       <nav class="opciones">
         <div v-if="!tokenStore.auth">
