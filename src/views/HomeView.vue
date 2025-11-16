@@ -1,5 +1,5 @@
 <template>
-  <Main/>
+  
     <div class="container">
     <header class="header">
       <img src="/Logo_CORPOELEC.png" alt="CORPOELEC" class="logo" />
