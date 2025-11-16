@@ -71,7 +71,7 @@ img {
 
 .opciones {
   display: flex; 
-  text-align: right;
+  justify-content: center;
 }
 
 .opcion {
