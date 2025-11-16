@@ -64,11 +64,12 @@ img {
 .items {
   margin-right: 4rem;
   padding: 5px 3px;
+  align-items: end;
 }
 
 .opciones {
   display: flex;
-  align-items:end;
+  align-items:center;
 }
 
 .opcion {
