@@ -67,6 +67,7 @@ img {
 }
 
 .items {
+  border: 2px red;
   padding: 5px 3px;
 }
 
