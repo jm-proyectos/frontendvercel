@@ -45,9 +45,9 @@
         </tr>
       </tbody>
     </table>
-        <div>
-      <button @click="agregar()" class="boton">Agregar Servicio</button>
-    </div>
+      <div v-if="tokenStore.auth">
+        <button @click="agregar()" class="boton">Agregar Servicio</button>
+      </div>
     </div>
   </div>
 </template>
