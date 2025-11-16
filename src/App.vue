@@ -1,6 +1,5 @@
 <template>
     <header>
-    <img alt="" class="logo" src="./assets/Navbar Logo.png" width="140" height="30" />
     <div class="items">
       <nav class="opciones">
         <router-link to="/" class="opcion">Inicio</router-link>
