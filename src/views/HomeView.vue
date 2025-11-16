@@ -31,7 +31,7 @@
               <span :class="['status', service.estatusColor]">{{ service.estatus }}</span>
             </td>
             <td>{{ service.ultimoPing }}</td>
-            <div v-if="!tokenStore.auth">
+            <div v-if="tokenStore.auth">
             <td class="acciones">
               <button class="ping-button" @click="pingService(index)">↻ Ping</button>
               <span @click="editar(service)" class="icono">
