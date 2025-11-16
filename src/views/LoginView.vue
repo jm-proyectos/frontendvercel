@@ -43,21 +43,23 @@ const user = reactive({
 })
 
 async function enviar(){
-  try {
-    const {data} = await axiosInstance.post('/auth/login',user);
-    if (!data){
-      tokenStore.auth=false;
-      return;
-    }
-    tokenStore.auth=true;
-    tokenStore.token = Cookies.get('token');
-    tokenStore.usuario = data;
-    router.push({ name: "dashboard"});
-    return;
-  } catch (error) {
-    console.log(error);
-    return;
-  }
+//   try {
+//     const {data} = await axiosInstance.post('/auth/login',user);
+//     if (!data){
+//       tokenStore.auth=false;
+//       return;
+//     }
+//     tokenStore.auth=true;
+//     tokenStore.token = Cookies.get('token');
+//     tokenStore.usuario = data;
+//     router.push({ name: "dashboard"});
+//     return;
+//   } catch (error) {
+//     console.log(error);
+//     return;
+//   }
+console.log("enviar...");
+return;
 }
 </script>
 
