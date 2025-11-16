@@ -2,10 +2,10 @@
     <header>
     <div class="items">
       <nav class="opciones">
-        <div>
+        <div v-if="!tokenStore.auth">
           <router-link to="/login" class="opcion boton">Iniciar Sesión</router-link>
         </div>
-        <div>
+        <div v-else>
           <button @click="cambiar()" class="opcion boton">Cerrar Sesión</button>
         </div>
       </nav>
