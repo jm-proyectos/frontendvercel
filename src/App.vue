@@ -70,7 +70,8 @@ img {
 }
 
 .opciones {
-  display: flex;  
+  display: flex; 
+  text-align: right;
 }
 
 .opcion {
