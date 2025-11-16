@@ -82,13 +82,6 @@ async function enviar1(){
   width: 100%;
   height: 100%;
   background-color: rgba(184, 181, 181, 0.5);
-
-  background-image: url("../assets/Background.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  overflow: hidden;
-  
   display: flex;
   transition: opacity 0.3s ease;
 }
