@@ -46,7 +46,7 @@ header {
 
 .container {
   max-width: 900px;
-  margin: 20px auto;
+  align-items:center;
   background: #fff;
   border-radius: 12px;
   padding: 16px;
@@ -70,8 +70,7 @@ img {
 }
 
 .opciones {
-  display: flex;
-  align-items:center;
+  display: flex;  
 }
 
 .opcion {
