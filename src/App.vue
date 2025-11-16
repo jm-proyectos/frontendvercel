@@ -53,7 +53,7 @@ header {
 }
 
 .cintillo {
-  width: max-content;
+  width: 100%;
   padding: 5px;
 }
 
