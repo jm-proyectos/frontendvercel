@@ -13,7 +13,7 @@
 </template>
 
 <script setup>
-import axiosInstance from '../plugins/axios.js';
+//import axiosInstance from '../plugins/axios.js';
 const API = 'https://backendvercel-umber.vercel.app';
 //import router from '..//router';
 import { ref, reactive } from 'vue';
