@@ -62,7 +62,7 @@ const enviar = async () => {
      tokenStore.auth=true;
      tokenStore.token = Cookies.get('token');
      tokenStore.usuario = data;
-     //router.push({ name: "/"});
+     router.push({ name: "home"});
      return;
   })
   .catch(error => {
