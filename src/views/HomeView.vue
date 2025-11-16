@@ -1,5 +1,5 @@
 <template>
-   <Main/>
+   
     <div class="container">
     <header class="header">
       <img src="/Logo_CORPOELEC.png" alt="CORPOELEC" class="logo" />
@@ -33,17 +33,17 @@
               <span :class="['status', service.estatusColor]">{{ service.estatus }}</span>
             </td>
             <td>{{ service.ultimoPing }}</td>
-            <div v-if="tokenStore.auth">
             <td class="acciones">
               <button class="ping-button" @click="pingService(index)">↻ Ping</button>
+              <div v-if="tokenStore.auth">
               <span @click="editar(service)" class="icono">
                  📋
               </span>
               <span @click="eliminar(service)" class="icono">
                  ❌
               </span>
+            </div> 
             </td>
-           </div> 
         </tr>
       </tbody>
     </table>
