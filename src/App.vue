@@ -4,10 +4,10 @@
       <nav class="opciones">
         <router-link to="/" class="opcion">Inicio</router-link>
         <router-link to="/" class="opcion">Dashboard</router-link>
-        <div v-if="!tokenStore.auth">
+        <div>
           <router-link to="/" class="opcion boton">Iniciar Sesión</router-link>
         </div>
-        <div v-else>
+        <div>
           <button @click="cambiar()" class="opcion boton">Cerrar Sesión</button>
         </div>
       </nav>
@@ -19,12 +19,12 @@
 <script setup>
   import { RouterLink, RouterView } from 'vue-router'
   import {useTokenStore} from '@/stores/userStore.js';
-  const tokenStore = useTokenStore();
+  //const tokenStore = useTokenStore();
   import router from './router/router.js';
   import Cookies from 'js-cookie';
 
   const cambiar=(()=>{  
-    tokenStore.auth=false;
+    //tokenStore.auth=false;
     Cookies.remove('token');
     router.push({ name: "home"});
   });
