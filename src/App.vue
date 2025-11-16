@@ -46,8 +46,9 @@ header {
 
 .container {
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  display: flex;
+  justify-content: center; /* Centrado horizontal */
   max-width: 900px;
   margin: 20px auto;
   background: #fff;

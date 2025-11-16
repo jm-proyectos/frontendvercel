@@ -163,6 +163,10 @@ const eliminar = async ({ nombre, _id }) => {
 <style scoped>
 /* --- Layout general --- */
 .container {
+  display: flex;
+  justify-content: center; /* Centrado horizontal */
+  align-items: center;     /* Centrado vertical */
+
   max-width: 900px;
   margin: 20px auto;
   background: #fff;
