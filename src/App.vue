@@ -2,7 +2,7 @@
     <header>
       <div class="contenido">
         <img alt="" class="logo" src="/cintillo.jpg" />
-    </div>
+      </div>
     <div class="items">
       <nav class="opciones">
         <div v-if="!tokenStore.auth">
@@ -65,4 +65,21 @@
     border-radius: 8px;
     background-color: #609FFF;
   }
+
+  .contenido{
+  width: 100vw;
+  display: flex;
+  justify-content:center;
+  padding: 5px;
+  }
+
+  /* --- Responsive (Móvil) --- */  
+  @media (max-width: 600px) {
+
+  .contenido{
+  display: none;
+  margin: 0 auto;
+  padding: 0;
+  }
+ }  
 </style>
