@@ -71,7 +71,7 @@ img {
 
 .opciones {
   display: flex; 
-  justify-content: center;
+  justify-content:end;
 }
 
 .opcion {
