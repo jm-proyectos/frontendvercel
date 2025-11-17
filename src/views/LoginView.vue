@@ -37,7 +37,7 @@ const tokenStore = useTokenStore();
 
 const API = 'https://backendvercel-umber.vercel.app';
 const user = reactive({
-   "email":"jhonny@gmail.com",
+   "email":"alex2@gmail.com",
    "password":"123"
   //"email":"",
   //"password":""
