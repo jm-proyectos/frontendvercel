@@ -18,7 +18,7 @@
 </template>
 
 <script setup>
-//  import Main from './components/Main.vue'
+import Main from './components/Main.vue'
 import { RouterLink, RouterView } from 'vue-router'
 import { useTokenStore } from '@/stores/userStore.js';
 const tokenStore = useTokenStore();
