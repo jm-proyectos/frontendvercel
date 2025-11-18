@@ -32,7 +32,6 @@
 import {ref, reactive} from 'vue';
 import Cookies from 'js-cookie';
 import router from '../router/router';
-//import axiosInstance from '../plugins/axios.js';
 import {useTokenStore} from '@/stores/userStore.js';
 const tokenStore = useTokenStore();
 
@@ -77,27 +76,7 @@ const cerrar = (() => {
   router.back();
 })
 
-
-//async function enviar1(){
-//   try {
-//     const {data} = await axiosInstance.post('/auth/login',user);
-//     if (!data){
-//       tokenStore.auth=false;
-//       return;
-//     }
-//     tokenStore.auth=true;
-//     tokenStore.token = Cookies.get('token');
-//     tokenStore.usuario = data;
-//     router.push({ name: "dashboard"});
-//     return;
-//   } catch (error) {
-//     console.log(error);
-//     return;
-//   }
-//}
 </script>
-
-
 
 <style scoped>
 .modal-mask {

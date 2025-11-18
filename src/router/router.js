@@ -3,7 +3,6 @@ import HomeView from '../views/HomeView.vue';
 import AgregarServicio from '../components/AgregarServicio.vue';
 import EditarServicio from '../components/EditarServicio.vue';
 import LoginView from '../views/LoginView.vue';
-//import axios from 'axios';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -34,10 +33,5 @@ const router = createRouter({
     },
   ]
 })
-
-//const axiosInstance = axios.create({
-//  baseURL: 'http://localhost:3000/api',
-//  withCredentials: true,
-//});
 
 export default router

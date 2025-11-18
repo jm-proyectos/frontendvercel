@@ -54,12 +54,7 @@
 
 
 <script setup>
-import Main from '../components/Main.vue'
-//import Footer from '../components/Footer.vue'
-import axiosInstance from '../plugins/axios.js';
-
 import router from '../router/router';
-
 import {onMounted, ref, reactive } from "vue";
 
 import { useRouter, useRoute } from "vue-router";
@@ -100,7 +95,6 @@ async function pingService(index) {
     service.estatus = "Caído";
     service.estatusColor = "red";
   }
-  //service.lastCheck = "hace unos segundos";
   const fechaActual = new Date();
   var n = fechaActual.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
   service.ultimoPing = n.toLowerCase();
@@ -113,9 +107,8 @@ async function pingService(index) {
     "ultimoPing": service.ultimoPing
   });
 
-  //const response1 = await axiosInstance.put(`${API}/api/servicios/${service._id}`, newservicio);
   fetch(`${API}/api/servicios/${service._id}`, {
-    method: 'PATCH', // o 'PATCH' si solo quieres actualizar campos específicos
+    method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
     },
@@ -155,13 +148,9 @@ const eliminar = async ({ nombre, _id }) => {
   }
 }
 
-
 </script>
 
-
-
 <style scoped>
-/* --- Layout general --- */
 .container {
   max-width: 900px;
   margin: 20px auto;

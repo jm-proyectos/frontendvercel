@@ -15,7 +15,6 @@
 </template>
 
 <script setup>
-import axiosInstance from '../plugins/axios.js';
 import router from '..//router/router.js';
 import { ref, reactive } from 'vue';
 const API = 'https://backendvercel-umber.vercel.app';
@@ -29,22 +28,10 @@ const newservicio = reactive({
 });
 
 
-// async function enviar() {
-//   try {
-//     const { data } = await axiosInstance.post('/servicios', newservicio);
-//     router.back();
-//     return;
-//   } catch (error) {
-//     console.log(error);
-//     return;
-//   }
-// }
-
-
 async function enviar() {
   try {
     fetch(`${API}/api/servicios`, {
-      method: 'POST', // o 'PATCH' si solo quieres actualizar campos específicos
+      method: 'POST', 
       headers: {
         'Content-Type': 'application/json',
       },

@@ -13,9 +13,7 @@
 </template>
 
 <script setup>
-//import axiosInstance from '../plugins/axios.js';
 const API = 'https://backendvercel-umber.vercel.app';
-//import router from '..//router';
 import { ref, reactive } from 'vue';
 
 import { useRoute, useRouter } from "vue-router";
@@ -27,21 +25,10 @@ const newservicio = reactive({
 });
 
 
-// async function enviar() {
-//   try {
-//     const { data } = await axiosInstance.patch(`/servicios/${params.id}`, newservicio);
-//     router.back();
-//     return;
-//   } catch (error) {
-//     console.log(error);
-//     return;
-//   }
-// };
-
 async function enviar() {
 try {
 fetch(`${API}/api/servicios/${params.id}`, {
-    method: 'PATCH', // o 'PATCH' si solo quieres actualizar campos específicos
+    method: 'PATCH', 
     headers: {
       'Content-Type': 'application/json',
     },
