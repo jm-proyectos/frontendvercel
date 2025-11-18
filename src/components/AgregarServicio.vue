@@ -82,10 +82,10 @@ const cerrar = (() => {
   font-family: 'Arial Narrow Bold', sans-serif;
   position: fixed;
   z-index: 9998;
-  top: 3.5rem;
+  top: 2.5rem;
   left: 0;
   width: 100%;
-  height: 70%;
+  height: 100%;
   display: flex;
   transition: opacity 0.3s ease;
 }
@@ -100,7 +100,7 @@ const cerrar = (() => {
 }
 
 .modal-container {
-  width: 450px;
+  width: 350px;
   margin: auto;
   padding: 20px 15px;
   background-color: #e6e5e5;
