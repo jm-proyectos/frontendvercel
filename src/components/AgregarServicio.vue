@@ -82,7 +82,7 @@ const cerrar = (() => {
   font-family: 'Arial Narrow Bold', sans-serif;
   position: fixed;
   z-index: 9998;
-  top: 2.5rem;
+  top: 3.5rem;
   left: 0;
   width: 100%;
   height: 70%;
