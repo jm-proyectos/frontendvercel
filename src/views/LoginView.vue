@@ -116,7 +116,7 @@ const cerrar = (() => {
 .modal-container {
   width: 350px;
   margin: auto;
-  padding: 35px 15px;
+  padding: 20px 15px;
   background-color: #e6e5e5;
   border-radius: 25px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
