@@ -2,6 +2,7 @@
   <Transition name="login">
         <div class="modal-mask">
           <div class="modal-container">
+            <button @click="cerrar()" class="cerrar">X</button>
         <h2>Inicia Sesión</h2>
           <form  @submit.prevent="enviar()" class="formulario">
             <input 
@@ -72,6 +73,9 @@ const enviar = async () => {
 };
 
 
+const cerrar = (() => {
+  router.back();
+})
 
 
 //async function enviar1(){
@@ -122,6 +126,16 @@ const enviar = async () => {
   justify-content: center;
   align-items: center;
 }
+
+.cerrar {
+  margin-left: 90%;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  border: none;
+  border-radius: 50%;
+}
+
 
 h2{
     font-size: 2.5rem;
